@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #06110d;
+  --foreground: #ecfff7;
+  --muted: #8eb8a9;
+  --card: #0d1f18;
+  --brand: #21b687;
+  --brand-deep: #15946b;
+  --brand-soft: #123e30;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-soft: var(--brand-soft);
+  --font-sans: var(--font-plus-jakarta);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(33, 182, 135, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(33, 182, 135, 0.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.fade-up {
+  animation: fade-up 680ms ease-out both;
+}
+
+.fade-up-delay {
+  animation: fade-up 680ms ease-out 120ms both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
