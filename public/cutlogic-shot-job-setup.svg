@@ -1,0 +1,20 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#081611"/>
+  <rect x="44" y="36" width="1512" height="828" rx="22" fill="#0D1F18" stroke="#1E6D53" stroke-width="2"/>
+  <rect x="86" y="90" width="620" height="42" rx="10" fill="#123E30"/>
+  <rect x="86" y="162" width="680" height="16" rx="8" fill="#21B687"/>
+  <rect x="86" y="198" width="560" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="86" y="254" width="700" height="520" rx="14" fill="#10271E" stroke="#1E6D53"/>
+  <rect x="118" y="290" width="220" height="12" rx="6" fill="#21B687"/>
+  <rect x="118" y="326" width="628" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="118" y="372" width="628" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="118" y="418" width="628" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="118" y="494" width="260" height="46" rx="10" fill="#21B687"/>
+  <rect x="822" y="162" width="692" height="612" rx="14" fill="#10271E" stroke="#1E6D53"/>
+  <rect x="858" y="206" width="260" height="12" rx="6" fill="#21B687"/>
+  <rect x="858" y="244" width="616" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="858" y="294" width="616" height="94" rx="10" fill="#113428"/>
+  <rect x="858" y="408" width="616" height="94" rx="10" fill="#0F2F24"/>
+  <rect x="858" y="522" width="616" height="94" rx="10" fill="#113428"/>
+  <text x="86" y="820" fill="#9CD4C1" font-size="34" font-family="Arial, sans-serif">Job setup screen preview</text>
+</svg>

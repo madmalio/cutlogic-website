@@ -1,0 +1,18 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#081611"/>
+  <rect x="44" y="36" width="1512" height="828" rx="22" fill="#0D1F18" stroke="#1E6D53" stroke-width="2"/>
+  <rect x="86" y="90" width="520" height="42" rx="10" fill="#123E30"/>
+  <rect x="86" y="162" width="700" height="16" rx="8" fill="#21B687"/>
+  <rect x="86" y="198" width="580" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="86" y="252" width="900" height="522" rx="14" fill="#10271E" stroke="#1E6D53"/>
+  <rect x="122" y="292" width="828" height="94" rx="12" fill="#113428"/>
+  <rect x="122" y="406" width="828" height="94" rx="12" fill="#0F2F24"/>
+  <rect x="122" y="520" width="828" height="94" rx="12" fill="#113428"/>
+  <rect x="122" y="646" width="280" height="46" rx="10" fill="#21B687"/>
+  <rect x="1020" y="252" width="494" height="522" rx="14" fill="#10271E" stroke="#1E6D53"/>
+  <rect x="1056" y="292" width="230" height="12" rx="6" fill="#21B687"/>
+  <rect x="1056" y="334" width="422" height="10" rx="5" fill="#8CB9AA"/>
+  <rect x="1056" y="378" width="422" height="152" rx="12" fill="#113428"/>
+  <rect x="1056" y="552" width="422" height="152" rx="12" fill="#0F2F24"/>
+  <text x="86" y="820" fill="#9CD4C1" font-size="34" font-family="Arial, sans-serif">Export and sharing preview</text>
+</svg>

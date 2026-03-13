@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScreenshotCarousel from "@/components/screenshot-carousel";
 
 const features = [
   {
@@ -59,6 +60,16 @@ const faqs = [
     answer:
       "No. CutLogic is a one-time purchase with full access for a single price.",
   },
+  {
+    question: "What if CutLogic is not a fit for my shop?",
+    answer:
+      "If it does not fit your workflow, contact support and we will make it right with a straightforward refund process.",
+  },
+  {
+    question: "How quickly can I get started after purchase?",
+    answer:
+      "Immediately. You get access right away and can start setting up jobs the same day.",
+  },
 ];
 
 export default function Home() {
@@ -70,9 +81,9 @@ export default function Home() {
             <Image
               src="/cutlogic-logo-dark.png"
               alt="CutLogic logo"
-              width={36}
-              height={36}
-              className="h-9 w-9 rounded-md object-contain"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-md object-contain"
               priority
             />
             <span className="font-display text-xl font-bold tracking-tight">CutLogic</span>
@@ -118,6 +129,28 @@ export default function Home() {
                 View Pricing
               </a>
             </div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">
+              <p>Instant access after purchase</p>
+              <p>One-time payment, no subscription</p>
+              <p>Email support included</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-14 sm:px-6 sm:pb-18">
+          <div className="mx-auto w-full max-w-5xl">
+            <div className="mb-6 text-center">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand">See It Working</p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                A Quick Look Inside CutLogic
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-muted">
+                Real production fields, door specs, and cut list output designed to be fast on the
+                shop floor.
+              </p>
+            </div>
+
+            <ScreenshotCarousel />
           </div>
         </section>
 
@@ -164,6 +197,9 @@ export default function Home() {
               <h3 className="font-display text-2xl font-semibold">CutLogic</h3>
               <p className="mt-3 text-5xl font-bold">$39</p>
               <p className="mt-1 text-sm text-muted">one-time purchase</p>
+              <p className="mt-3 rounded-lg border border-brand/30 bg-brand/10 px-3 py-2 text-sm text-foreground/90">
+                14-day money-back guarantee
+              </p>
               <ul className="mt-8 space-y-3 text-sm text-foreground/90">
                 <li>Unlimited jobs</li>
                 <li>Advanced cut optimization</li>
@@ -177,6 +213,32 @@ export default function Home() {
                 Buy CutLogic
               </a>
             </article>
+          </div>
+        </section>
+
+        <section className="px-5 pb-20 sm:px-6">
+          <div className="mx-auto w-full max-w-4xl rounded-3xl border border-brand/20 bg-card p-8 text-center shadow-xl shadow-black/20 sm:p-10">
+            <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+              Ready to Simplify Your Cut Lists?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted">
+              Stop losing time to manual setup and spreadsheet errors. Get CutLogic once and use
+              it on real jobs today.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="https://app.cutlogic.app"
+                className="rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 transition hover:-translate-y-0.5 hover:bg-brand-deep"
+              >
+                Buy CutLogic
+              </a>
+              <a
+                href="mailto:support@cutlogic.app"
+                className="rounded-xl border border-brand/35 bg-transparent px-8 py-4 text-base font-semibold text-foreground transition hover:border-brand hover:text-brand"
+              >
+                Ask a Question
+              </a>
+            </div>
           </div>
         </section>
 
@@ -203,9 +265,9 @@ export default function Home() {
             <Image
               src="/cutlogic-logo-dark.png"
               alt="CutLogic logo"
-              width={28}
-              height={28}
-              className="h-7 w-7 rounded object-contain"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded object-contain"
             />
             <p className="font-display text-base font-semibold text-foreground">CutLogic</p>
             <p>© {new Date().getFullYear()} All rights reserved.</p>
