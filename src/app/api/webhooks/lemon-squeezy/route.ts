@@ -60,7 +60,7 @@ function extractIds(body: LemonWebhookBody) {
     toText(attributes.customer_id);
 
   const licenseKey = normalizeLicenseKey(
-    customData.license_key || customData.licenseKey,
+    customData.license_key || customData.licenseKey || attributes.key,
   );
 
   const email = normalizeEmail(
@@ -80,6 +80,14 @@ function extractIds(body: LemonWebhookBody) {
     licenseKey,
     email,
   };
+}
+
+function isLicenseKeyEvent(eventName: string) {
+  const normalized = toLowerText(eventName);
+  return (
+    normalized === "license_key_created" ||
+    normalized === "license_key_updated"
+  );
 }
 
 function resolveTargetState(eventName: string, attributes: JsonObject) {
@@ -246,7 +254,53 @@ export async function POST(request: Request) {
         | { id: number; state: string }
         | undefined;
 
-      if (licenseKey) {
+      if (isLicenseKeyEvent(eventName)) {
+        if (!licenseKey || !email) {
+          await client.query(
+            `UPDATE webhook_events
+             SET processed_at = NOW(), processing_error = $2
+             WHERE id = $1`,
+            [webhookRowId, "license_key_event_missing_key_or_email"],
+          );
+          return { processed: true, matched: false };
+        }
+
+        const upsertedLicense = await client.query<{ id: number; state: string }>(
+          `INSERT INTO licenses (
+             license_key,
+             email,
+             state,
+             grace_days,
+             lemon_order_id,
+             lemon_customer_id,
+             last_validated_at,
+             updated_at
+           )
+           VALUES (
+             $1,
+             $2,
+             'paid_active',
+             30,
+             NULLIF($3, ''),
+             NULLIF($4, ''),
+             NOW(),
+             NOW()
+           )
+           ON CONFLICT (license_key)
+           DO UPDATE SET
+             email = EXCLUDED.email,
+             state = 'paid_active',
+             lemon_order_id = COALESCE(NULLIF(EXCLUDED.lemon_order_id, ''), licenses.lemon_order_id),
+             lemon_customer_id = COALESCE(NULLIF(EXCLUDED.lemon_customer_id, ''), licenses.lemon_customer_id),
+             last_validated_at = NOW(),
+             updated_at = NOW()
+           RETURNING id, state`,
+          [licenseKey, email, orderId, customerId],
+        );
+        licenseRow = upsertedLicense.rows[0];
+      }
+
+      if (!licenseRow && licenseKey) {
         const byKey = await client.query<{ id: number; state: string }>(
           `SELECT id, state FROM licenses WHERE license_key = $1 LIMIT 1`,
           [licenseKey],
