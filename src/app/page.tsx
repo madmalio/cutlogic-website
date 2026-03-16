@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ScreenshotCarousel from "@/components/screenshot-carousel";
 
-const downloadUrl = "https://app.cutlogic.app/download";
+const downloadUrl = "/download";
 const buyUrl = "https://app.cutlogic.app";
 
 const features = [
@@ -304,6 +304,9 @@ export default function Home() {
             </Link>
             <Link href="/terms" className="transition hover:text-brand">
               Terms of Service
+            </Link>
+            <Link href="/download" className="transition hover:text-brand">
+              Download
             </Link>
             <Link href="/help" className="transition hover:text-brand">
               Help

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const downloadUrl = "https://app.cutlogic.app/download";
+const downloadUrl = "/download";
 
 export default function SuccessPage() {
   return (
