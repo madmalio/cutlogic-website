@@ -37,7 +37,7 @@ export default function HelpPage() {
           <ul className="mt-4 space-y-2 text-sm text-foreground/90">
             <li>- Activate in app: Settings &gt; License.</li>
             <li>- Enter the purchase email and license key from Lemon Squeezy.</li>
-            <li>- If refunded, the license is revoked on next validation.</li>
+            <li>- If refunded, the license is revoked the next time CutLogic successfully validates with the license server.</li>
             <li>- If activation fails, check key/email spelling and try Validate Now.</li>
           </ul>
         </section>
