@@ -1,15 +1,21 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
 import {
+  corsOptionsResponse,
   jsonError,
   licenseStates,
   maybeResolveTrialState,
   normalizeDeviceId,
   normalizeLicenseKey,
   type LicenseRow,
+  withCors,
 } from "@/lib/license-api";
 
 export const runtime = "nodejs";
+
+export function OPTIONS() {
+  return corsOptionsResponse();
+}
 
 type ValidateRequest = {
   licenseKey?: string;
@@ -80,7 +86,7 @@ export async function POST(request: Request) {
 
     const current = updatedLicense.rows[0];
 
-    return NextResponse.json({
+    return withCors(NextResponse.json({
       ok: true,
       licenseId: current.id,
       state: stateToReturn,
@@ -91,7 +97,7 @@ export async function POST(request: Request) {
         stateToReturn === licenseStates.expiredTrial ||
         stateToReturn === licenseStates.pastDue ||
         stateToReturn === licenseStates.revokedRefund,
-    });
+    }));
   } catch (error) {
     console.error("license.validate failed", error);
     return jsonError(500, "INTERNAL_ERROR", "Unable to validate license.");

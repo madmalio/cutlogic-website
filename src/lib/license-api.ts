@@ -1,5 +1,25 @@
 import { NextResponse } from "next/server";
 
+export const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+export function withCors(response: NextResponse) {
+  Object.entries(corsHeaders).forEach(([key, value]) => {
+    response.headers.set(key, value);
+  });
+  return response;
+}
+
+export function corsOptionsResponse() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: corsHeaders,
+  });
+}
+
 export const licenseStates = {
   trialActive: "trial_active",
   paidActive: "paid_active",
@@ -28,13 +48,13 @@ export function jsonError(
   code: ApiErrorCode,
   message: string,
 ) {
-  return NextResponse.json(
+  return withCors(NextResponse.json(
     {
       ok: false,
       error: { code, message },
     },
     { status },
-  );
+  ));
 }
 
 export function normalizeLicenseKey(value: unknown) {

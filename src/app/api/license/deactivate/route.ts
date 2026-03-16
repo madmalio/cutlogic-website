@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
 import { query } from "@/lib/db";
-import { jsonError, normalizeDeviceId, normalizeLicenseKey } from "@/lib/license-api";
+import {
+  corsOptionsResponse,
+  jsonError,
+  normalizeDeviceId,
+  normalizeLicenseKey,
+  withCors,
+} from "@/lib/license-api";
 
 export const runtime = "nodejs";
+
+export function OPTIONS() {
+  return corsOptionsResponse();
+}
 
 type DeactivateRequest = {
   licenseKey?: string;
@@ -46,7 +56,7 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ ok: true });
+    return withCors(NextResponse.json({ ok: true }));
   } catch (error) {
     console.error("license.deactivate failed", error);
     return jsonError(500, "INTERNAL_ERROR", "Unable to deactivate license.");

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { withTransaction } from "@/lib/db";
 import {
+  corsOptionsResponse,
   isDevAutoCreateEnabled,
   jsonError,
   licenseStates,
@@ -11,9 +12,14 @@ import {
   parseDeviceLimit,
   trialEndsAt,
   type LicenseRow,
+  withCors,
 } from "@/lib/license-api";
 
 export const runtime = "nodejs";
+
+export function OPTIONS() {
+  return corsOptionsResponse();
+}
 
 type ActivateRequest = {
   licenseKey?: string;
@@ -182,7 +188,7 @@ export async function POST(request: Request) {
       );
 
       return {
-        response: NextResponse.json({
+        response: withCors(NextResponse.json({
           ok: true,
           licenseId: updatedLicense.id,
           state: updatedLicense.state,
@@ -193,7 +199,7 @@ export async function POST(request: Request) {
             latestActiveCountResult.rows[0]?.count || "0",
             10,
           ),
-        }),
+        })),
       };
     });
 
