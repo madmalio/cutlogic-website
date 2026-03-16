@@ -55,8 +55,8 @@ const faqs = [
       "No. CutLogic is designed for real shop conditions and does not require constant internet access.",
   },
   {
-    question: "Do you offer team support?",
-    answer: "Yes. Team onboarding and priority support are available.",
+    question: "Do you offer support?",
+    answer: "Yes. Email support is included.",
   },
   {
     question: "Is this a subscription?",
@@ -100,7 +100,7 @@ export default function Home() {
             href={downloadUrl}
             className="rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-deep"
           >
-            Download Free Trial
+            Download Free Trial (Windows)
           </a>
         </div>
       </header>
@@ -126,12 +126,15 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-2xl text-sm text-muted">
               Start with a free trial. Upgrade anytime with a one-time license.
             </p>
+            <p className="mx-auto mt-2 max-w-2xl text-sm text-muted">
+              Windows available now. macOS coming soon.
+            </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={downloadUrl}
                 className="rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 transition hover:-translate-y-0.5 hover:bg-brand-deep"
               >
-                Download Free Trial
+                Download Free Trial (Windows)
               </a>
               <a
                 href={buyUrl}
@@ -232,9 +235,9 @@ export default function Home() {
                 href={downloadUrl}
                 className="mt-3 block rounded-xl border border-brand/35 px-5 py-3 text-center font-semibold text-foreground transition hover:border-brand hover:text-brand"
               >
-                Download Free Trial
+                Download Free Trial (Windows)
               </a>
-              <p className="mt-3 text-xs text-muted">Activation is completed inside the CutLogic app.</p>
+              <p className="mt-3 text-xs text-muted">Activation is completed inside the CutLogic app. Windows available now; macOS coming soon.</p>
             </article>
           </div>
         </section>
@@ -253,7 +256,7 @@ export default function Home() {
                 href={downloadUrl}
                 className="rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 transition hover:-translate-y-0.5 hover:bg-brand-deep"
               >
-                Download Free Trial
+                Download Free Trial (Windows)
               </a>
               <a
                 href={buyUrl}
@@ -301,6 +304,9 @@ export default function Home() {
             </Link>
             <Link href="/terms" className="transition hover:text-brand">
               Terms of Service
+            </Link>
+            <Link href="/help" className="transition hover:text-brand">
+              Help
             </Link>
             <a href="mailto:support@cutlogic.app" className="transition hover:text-brand">
               Contact
