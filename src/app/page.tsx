@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import ScreenshotCarousel from "@/components/screenshot-carousel";
 
+const downloadUrl = "https://app.cutlogic.app/download";
+const buyUrl = "https://app.cutlogic.app";
+
 const features = [
   {
     title: "Faster Job Setup",
@@ -61,6 +64,11 @@ const faqs = [
       "No. CutLogic is a one-time purchase with full access for a single price.",
   },
   {
+    question: "How do I activate after purchase?",
+    answer:
+      "Open CutLogic, go to Settings > License, and enter your purchase email and license key.",
+  },
+  {
     question: "What if CutLogic is not a fit for my shop?",
     answer:
       "If it does not fit your workflow, contact support and we will make it right with a straightforward refund process.",
@@ -89,10 +97,10 @@ export default function Home() {
             <span className="font-display text-xl font-bold tracking-tight">CutLogic</span>
           </a>
           <a
-            href="https://app.cutlogic.app"
+            href={downloadUrl}
             className="rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-deep"
           >
-            Get CutLogic
+            Download Free Trial
           </a>
         </div>
       </header>
@@ -115,23 +123,31 @@ export default function Home() {
               CutLogic helps your shop move from quote to production with reliable
               calculations, cleaner outputs, and a workflow your team can trust.
             </p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted">
+              Start with a free trial. Upgrade anytime with a one-time license.
+            </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://app.cutlogic.app"
+                href={downloadUrl}
                 className="rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 transition hover:-translate-y-0.5 hover:bg-brand-deep"
               >
-                Get Started
+                Download Free Trial
               </a>
               <a
-                href="#pricing"
+                href={buyUrl}
                 className="rounded-xl border border-brand/35 bg-card px-8 py-4 text-base font-semibold text-foreground transition hover:border-brand hover:text-brand"
               >
-                View Pricing
+                Buy License
+              </a>
+            </div>
+            <div className="mt-4">
+              <a href={downloadUrl} className="text-sm text-muted underline-offset-4 transition hover:text-brand hover:underline">
+                Already Purchased? Download &amp; Activate in App
               </a>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">
-              <p>Instant access after purchase</p>
-              <p>One-time payment, no subscription</p>
+              <p>Instant trial access</p>
+              <p>Upgrade anytime with one-time payment</p>
               <p>Email support included</p>
             </div>
           </div>
@@ -207,11 +223,18 @@ export default function Home() {
                 <li>Lifetime access to current release</li>
               </ul>
               <a
-                href="https://app.cutlogic.app"
+                href={buyUrl}
                 className="mt-8 block rounded-xl bg-brand px-5 py-3 text-center font-semibold text-white transition hover:bg-brand-deep"
               >
                 Buy CutLogic
               </a>
+              <a
+                href={downloadUrl}
+                className="mt-3 block rounded-xl border border-brand/35 px-5 py-3 text-center font-semibold text-foreground transition hover:border-brand hover:text-brand"
+              >
+                Download Free Trial
+              </a>
+              <p className="mt-3 text-xs text-muted">Activation is completed inside the CutLogic app.</p>
             </article>
           </div>
         </section>
@@ -227,16 +250,16 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://app.cutlogic.app"
+                href={downloadUrl}
                 className="rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 transition hover:-translate-y-0.5 hover:bg-brand-deep"
               >
-                Buy CutLogic
+                Download Free Trial
               </a>
               <a
-                href="mailto:support@cutlogic.app"
+                href={buyUrl}
                 className="rounded-xl border border-brand/35 bg-transparent px-8 py-4 text-base font-semibold text-foreground transition hover:border-brand hover:text-brand"
               >
-                Ask a Question
+                Buy License
               </a>
             </div>
           </div>
