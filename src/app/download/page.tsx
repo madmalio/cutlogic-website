@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const windowsDownloadPath = "/download/windows";
 
@@ -61,8 +62,36 @@ export default function DownloadPage() {
           <p className="mt-2 text-sm text-foreground/90">
             This is common for new installers while Windows reputation builds.
           </p>
-          <div className="mt-4 rounded-lg border border-zinc-300 bg-white p-4 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900/60 dark:text-zinc-300">
-            SmartScreen screenshot walkthrough will be added here.
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <article className="rounded-lg border border-zinc-300 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">Step 1</p>
+              <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Windows protected your PC</h4>
+              <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-300">Initial SmartScreen prompt shown during first install.</p>
+              <div className="mt-3 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-700">
+                <Image
+                  src="/windows-smartscreen-step-1.png"
+                  alt="Windows SmartScreen initial warning prompt"
+                  width={1200}
+                  height={800}
+                  className="h-auto w-full"
+                />
+              </div>
+            </article>
+
+            <article className="rounded-lg border border-zinc-300 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">Step 2</p>
+              <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">More info, then Run anyway</h4>
+              <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-300">After selecting More info, choose Run anyway to continue.</p>
+              <div className="mt-3 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-700">
+                <Image
+                  src="/windows-smartscreen-step-2-more-info.png"
+                  alt="Windows SmartScreen with More info expanded and Run anyway option"
+                  width={1200}
+                  height={800}
+                  className="h-auto w-full"
+                />
+              </div>
+            </article>
           </div>
           <p className="mt-3 text-sm text-foreground/90">
             Need install help? Email <a href="mailto:support@cutlogic.app" className="underline underline-offset-4">support@cutlogic.app</a>
