@@ -69,7 +69,7 @@ export default function DownloadPage() {
               <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-300">Initial SmartScreen prompt shown during first install.</p>
               <div className="mt-3 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-700">
                 <Image
-                  src="/windows-smartscreen-step-1.png"
+                  src="/windows-smartscreen-step-1.webp"
                   alt="Windows SmartScreen initial warning prompt"
                   width={1200}
                   height={800}
@@ -84,7 +84,7 @@ export default function DownloadPage() {
               <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-300">After selecting More info, choose Run anyway to continue.</p>
               <div className="mt-3 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-700">
                 <Image
-                  src="/windows-smartscreen-step-2-more-info.png"
+                  src="/windows-smartscreen-step-2-more-info.webp"
                   alt="Windows SmartScreen with More info expanded and Run anyway option"
                   width={1200}
                   height={800}
