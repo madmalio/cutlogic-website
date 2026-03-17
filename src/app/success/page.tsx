@@ -13,14 +13,14 @@ export default function SuccessPage() {
           Your License Is Ready
         </h1>
         <p className="mt-3 text-muted">
-          Your license key has been emailed to you. Follow the steps below to get
-          activated.
+          Your license key has been emailed to you. If CutLogic is already installed,
+          open Settings &gt; License and activate with your purchase email and key.
         </p>
 
         <ol className="mt-8 space-y-3 text-sm text-foreground/90">
-          <li>1. Download the CutLogic installer.</li>
+          <li>1. If needed, download and install CutLogic.</li>
           <li>2. Open CutLogic on your computer.</li>
-          <li>3. Go to Settings &gt; License and enter your email + key.</li>
+          <li>3. Go to Settings &gt; License and enter your purchase email + key.</li>
         </ol>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
