@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScreenshotCarousel from "@/components/screenshot-carousel";
+import { getPublicCheckoutUrl } from "@/lib/config";
 
 const downloadUrl = "/download";
-const buyUrl = "https://app.cutlogic.app";
+const buyUrl = getPublicCheckoutUrl();
 
 const features = [
   {
