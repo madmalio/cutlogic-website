@@ -20,8 +20,9 @@ const slides: Slide[] = [
   {
     src: "/cutlogic-shot-catalog.webp",
     alt: "CutLogic catalog and presets screen",
-    title: "Catalog + Presets",
-    description: "Standardize dimensions and options across every project.",
+    title: "Catalog + Custom Presets",
+    description:
+      "Create your own presets for dimensions, materials, and options so every job starts faster and stays consistent.",
   },
   {
     src: "/cutlogic-shot-quick-door.webp",
@@ -38,8 +39,9 @@ const slides: Slide[] = [
   {
     src: "/cutlogic-shot-export.webp",
     alt: "CutLogic export and output screen",
-    title: "Share Outputs Fast",
-    description: "Send organized results to your team right away.",
+    title: "Print-Ready Layouts",
+    description:
+      "Generate clean print layouts your shop can use immediately for production and handoff.",
   },
 ];
 
