@@ -305,6 +305,9 @@ export default function Home() {
             <Link href="/terms" className="transition hover:text-brand">
               Terms of Service
             </Link>
+            <Link href="/refund-policy" className="transition hover:text-brand">
+              Refund Policy
+            </Link>
             <Link href="/download" className="transition hover:text-brand">
               Download
             </Link>
