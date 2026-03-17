@@ -12,31 +12,31 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/cutlogic-shot-job-setup.svg",
+    src: "/cutlogic-shot-job-setup.webp",
     alt: "CutLogic job setup screen",
     title: "Faster Job Setup",
     description: "Set up a door job in minutes with reusable defaults.",
   },
   {
-    src: "/cutlogic-shot-catalog.svg",
+    src: "/cutlogic-shot-catalog.webp",
     alt: "CutLogic catalog and presets screen",
     title: "Catalog + Presets",
     description: "Standardize dimensions and options across every project.",
   },
   {
-    src: "/cutlogic-shot-quick-door.svg",
+    src: "/cutlogic-shot-quick-door.webp",
     alt: "CutLogic quick door mode screen",
     title: "Quick Door Mode",
     description: "Handle one-off doors without a full job workflow.",
   },
   {
-    src: "/cutlogic-shot-cut-list.svg",
+    src: "/cutlogic-shot-cut-list.webp",
     alt: "CutLogic generated cut list screen",
     title: "Production-Ready Cut Lists",
     description: "Generate clean outputs with fewer mistakes and less waste.",
   },
   {
-    src: "/cutlogic-shot-export.svg",
+    src: "/cutlogic-shot-export.webp",
     alt: "CutLogic export and output screen",
     title: "Share Outputs Fast",
     description: "Send organized results to your team right away.",
@@ -69,7 +69,9 @@ export default function ScreenshotCarousel() {
           event.currentTarget.dataset.touchStartX = String(touchStartX);
         }}
         onTouchEnd={(event) => {
-          const touchStartX = Number(event.currentTarget.dataset.touchStartX ?? "NaN");
+          const touchStartX = Number(
+            event.currentTarget.dataset.touchStartX ?? "NaN",
+          );
           const touchEndX = event.changedTouches[0]?.clientX;
           if (!Number.isFinite(touchStartX) || touchEndX === undefined) return;
           const deltaX = touchEndX - touchStartX;
@@ -111,17 +113,24 @@ export default function ScreenshotCarousel() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-xl font-semibold">{slide.title}</p>
-            <p className="mt-2 text-sm text-muted sm:text-base">{slide.description}</p>
+            <p className="mt-2 text-sm text-muted sm:text-base">
+              {slide.description}
+            </p>
           </div>
 
-          <div className="flex items-center gap-2" aria-label="Choose screenshot">
+          <div
+            className="flex items-center gap-2"
+            aria-label="Choose screenshot"
+          >
             {slides.map((item, index) => (
               <button
                 key={item.title}
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className={`h-2.5 w-2.5 rounded-full transition ${
-                  index === activeIndex ? "bg-brand" : "bg-brand/30 hover:bg-brand/55"
+                  index === activeIndex
+                    ? "bg-brand"
+                    : "bg-brand/30 hover:bg-brand/55"
                 }`}
                 aria-label={`Show ${item.title}`}
               />
